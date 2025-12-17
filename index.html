@@ -3,106 +3,865 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Expert Advisors & Indicators</title>
+  <title>Quantum EAs — Premium Expert Advisors & Indicators (MT5)</title>
+
+  <meta name="description" content="Quantum EAs builds premium MT5 Expert Advisors and Indicators. Two AI-powered indicators ($30) and three automated EAs ($100). Delivered by email after purchase.">
+  <meta name="theme-color" content="#0b1020">
+
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#070a12;
+      --panel:#0c1223;
+      --panel2:#0b1020;
+      --text:#e9edf7;
+      --muted:#aab3c7;
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.14);
+      --brand:#7c5cff;
+      --brand2:#2ee9a6;
+      --warn:#ffce5c;
+      --danger:#ff5c7a;
+      --shadow: 0 20px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1180px;
     }
-    header {
-      background: linear-gradient(135deg, #2563eb, #0ea5e9);
-      padding: 60px 20px;
-      text-align: center;
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 500px at 10% -10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(46,233,166,.22), transparent 55%),
+        radial-gradient(800px 600px at 50% 120%, rgba(255,92,122,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
     }
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* Topbar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(7,10,18,.92), rgba(7,10,18,.55));
+      border-bottom: 1px solid var(--line);
     }
-    header p {
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px;
+      border-radius:12px;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.25), transparent 60%),
+        linear-gradient(135deg, rgba(124,92,255,1), rgba(46,233,166,1));
+      box-shadow: 0 10px 30px rgba(124,92,255,.22);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .nav{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:650;
+      font-size:13px;
+      transition:.2s ease;
+      background: rgba(255,255,255,.02);
+    }
+    .pill:hover{border-color:var(--line2); color:var(--text); transform: translateY(-1px)}
+    .pill.primary{
+      color: #081018;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(46,233,166,1));
+      border-color: transparent;
+      box-shadow: 0 12px 30px rgba(46,233,166,.12);
+    }
+
+    /* Hero */
+    .hero{padding:60px 0 28px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .hero{padding-top:38px}
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(500px 200px at 15% 10%, rgba(124,92,255,.18), transparent 60%),
+        radial-gradient(520px 220px at 90% 20%, rgba(46,233,166,.12), transparent 65%),
+        radial-gradient(600px 240px at 40% 120%, rgba(255,92,122,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-inner{position:relative}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:750;
+      color: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:13px;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:999px;
+      background: var(--brand2);
+      box-shadow: 0 0 0 6px rgba(46,233,166,.12);
+    }
+    h1{
+      margin:16px 0 12px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.5px;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: 15.8px;
+      max-width: 62ch;
+      margin: 0 0 18px;
+    }
+    .cta-row{
+      display:flex; gap:12px; flex-wrap:wrap;
+      align-items:center;
+      margin-top: 10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:750;
+      transition:.18s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: var(--line2)}
+    .btn.primary{
+      border-color: transparent;
+      color:#071018;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(46,233,166,1));
+      box-shadow: 0 14px 40px rgba(124,92,255,.18);
+    }
+    .btn.secondary{
+      border-color: rgba(124,92,255,.45);
+      background: rgba(124,92,255,.10);
+    }
+    .tiny{
+      font-size: 12.8px;
+      color: rgba(255,255,255,.75);
+      margin-top: 14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .chip{
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.78);
+      font-weight:650;
+    }
+
+    /* Side panel */
+    .side{
+      display:grid;
+      grid-template-rows: auto auto;
+      gap:18px;
+    }
+    .mini{
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .mini h3{margin:0 0 10px; font-size:16px}
+    .mini p{margin:0; color:var(--muted); font-size:14px}
+    .mini .list{
+      margin-top: 12px;
+      display:grid;
+      gap:10px;
+    }
+    .rowline{
+      display:flex; align-items:flex-start; gap:10px;
+      color: rgba(255,255,255,.80);
+      font-weight:650;
+      font-size: 13.5px;
+    }
+    .tick{
+      width:18px; height:18px;
+      border-radius: 7px;
+      background: rgba(46,233,166,.14);
+      border: 1px solid rgba(46,233,166,.25);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .tick:before{
+      content:"✓";
+      font-weight:900;
+      font-size: 12px;
+      color: rgba(46,233,166,.95);
+    }
+
+    /* Sections */
+    section{padding: 34px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; flex-wrap:wrap;
+      margin-bottom: 14px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -.2px;
+    }
+    .section-title .hint{
+      color: var(--muted);
+      font-size: 13.5px;
+      max-width: 65ch;
+    }
+
+    /* Product grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 6;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      position:relative;
+    }
+    @media (max-width: 980px){ .card{grid-column: span 12;} }
+
+    .card .head{
+      padding: 18px 18px 12px;
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:12px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-weight:800;
+      font-size: 12.5px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.86);
+      white-space:nowrap;
+    }
+    .tag.ind{border-color: rgba(124,92,255,.35); background: rgba(124,92,255,.10)}
+    .tag.ea{border-color: rgba(46,233,166,.30); background: rgba(46,233,166,.10)}
+    .price{
+      font-weight:900;
+      letter-spacing:.2px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: rgba(255,255,255,.92);
+      white-space:nowrap;
+    }
+    .title{
+      padding: 0 18px 12px;
+    }
+    .title h3{
+      margin:0 0 6px;
       font-size: 18px;
-      opacity: 0.95;
+      letter-spacing:-.2px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #111827;
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #38bdf8;
-    }
-    .cta {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .cta a {
-      display: inline-block;
-      background: #22c55e;
-      color: #022c22;
-      padding: 15px 30px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
+    .title p{
+      margin:0;
+      color: var(--muted);
       font-size: 14px;
-      opacity: 0.7;
     }
+
+    .media{
+      padding: 0 18px 14px;
+    }
+    .imgwrap{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    img{display:block; width:100%; height:auto}
+    video{
+      width:100%;
+      height:auto;
+      display:block;
+      background: #000;
+    }
+
+    .body{
+      padding: 0 18px 18px;
+      color: rgba(255,255,255,.88);
+      font-size: 14px;
+    }
+    .body .lead{
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,.88);
+    }
+    .elegant{
+      margin: 0;
+      color: var(--muted);
+    }
+    .bullets{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .bullets li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius: 14px;
+    }
+    .bullets li .ic{
+      width:28px; height:28px; border-radius: 10px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      margin-top:2px;
+      font-weight:900;
+      color: rgba(255,255,255,.85);
+    }
+    .bullets li b{color: rgba(255,255,255,.92)}
+    .bullets li span{color: var(--muted)}
+
+    .actions{
+      padding: 0 18px 18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .actions .btn{padding: 11px 12px; border-radius: 12px; font-size: 13.5px}
+    .actions .btn.buy{background: linear-gradient(135deg, rgba(46,233,166,1), rgba(124,92,255,1)); color:#071018; border: none;}
+    .actions .btn.link{border-color: rgba(255,255,255,.16)}
+    .actions .btn.ghost{background: rgba(255,255,255,.02)}
+
+    /* Email delivery banner */
+    .delivery{
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,206,92,.25);
+      background: rgba(255,206,92,.08);
+      color: rgba(255,255,255,.85);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .delivery .badge{
+      width:30px; height:30px; border-radius: 12px;
+      background: rgba(255,206,92,.18);
+      border: 1px solid rgba(255,206,92,.25);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+    }
+    .delivery .badge:before{content:"✉"; font-weight:900}
+    .delivery b{color: rgba(255,255,255,.95)}
+    .delivery p{margin:0; color: rgba(255,255,255,.82); font-size: 13.5px}
+
+    /* Footer */
+    footer{
+      padding: 30px 0 44px;
+      border-top: 1px solid var(--line);
+      margin-top: 14px;
+    }
+    .footgrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .footgrid{grid-template-columns: 1fr;} }
+    .fine{
+      color: var(--muted);
+      font-size: 13.2px;
+      margin: 8px 0 0;
+      max-width: 85ch;
+    }
+    .footbox{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .footbox h4{margin:0 0 8px}
+    .footbox p{margin:0; color: var(--muted); font-size: 13.2px}
+    .smalllinks{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;
+    }
+    .smalllinks a{
+      padding: 9px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      font-weight:700;
+      font-size: 13px;
+      color: rgba(255,255,255,.85);
+    }
+
+    /* Smooth anchor offset for sticky topbar */
+    .anchor{scroll-margin-top: 80px;}
   </style>
 </head>
+
 <body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="row">
+        <div class="brand" aria-label="Quantum EAs">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div style="font-size:14px; opacity:.92; font-weight:900;">Quantum EAs</div>
+            <div style="font-size:12px; color:var(--muted); font-weight:650;">MT5 Expert Advisors & Indicators</div>
+          </div>
+        </div>
 
-<header>
-  <h1>Professional Expert Advisors & Indicators</h1>
-  <p>Advanced MT5 trading systems for disciplined, automated trading</p>
-</header>
-
-<section>
-  <h2>Our Products</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Turbo 2030 EA</h3>
-      <p>Advanced basket trading EA with smart risk and profit management.</p>
-    </div>
-    <div class="card">
-      <h3>Quantum Emperor EA</h3>
-      <p>High-precision strategy with multi-market scanning.</p>
-    </div>
-    <div class="card">
-      <h3>Custom Indicators</h3>
-      <p>Powerful MT5 indicators for trend, momentum, and volume analysis.</p>
+        <div class="nav">
+          <a class="pill" href="#indicators">Indicators</a>
+          <a class="pill" href="#expertadvisors">Expert Advisors</a>
+          <a class="pill" href="#delivery">Delivery</a>
+          <a class="pill primary" href="#buy">Purchase</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="cta">
-    <p>Interested or need a demo?</p>
-    <a href="https://wa.me/+254757989840" target="_blank">
-      Contact on WhatsApp
-    </a>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="hero-inner">
+            <div class="kicker"><span class="dot"></span>Built for clarity • discipline • execution</div>
+            <h1>Signals that feel <span style="background:linear-gradient(135deg, rgba(124,92,255,1), rgba(46,233,166,1)); -webkit-background-clip:text; background-clip:text; color:transparent;">inevitable</span>.</h1>
+            <p class="sub">
+              Quantum EAs produces premium MT5 indicators and automated trading robots designed for traders who want
+              clean decision-making, fast confirmation, and professional on-chart dashboards.
+              Each product is engineered to reduce noise, protect capital, and keep the plan visible.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#buy">Browse & Purchase</a>
+              <a class="btn secondary" href="#indicators">Explore Indicators ($30)</a>
+              <a class="btn" href="#expertadvisors">Explore EAs ($100)</a>
+            </div>
+
+            <div class="tiny">
+              <span class="chip">Indicators: <b>$30</b></span>
+              <span class="chip">Expert Advisors: <b>$100</b></span>
+              <span class="chip">Delivery: <b>By email</b></span>
+              <span class="chip">Platform: <b>MetaTrader 5</b></span>
+            </div>
+
+            <div id="delivery" class="delivery anchor">
+              <div class="badge" aria-hidden="true"></div>
+              <div>
+                <p><b>Email delivery:</b> after payment, your product file(s) will be sent to your email address. Keep your receipt/reference and use the contact channel provided on the checkout page if you need assistance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="mini">
+            <h3>What makes Quantum EAs feel “premium”</h3>
+            <div class="list">
+              <div class="rowline"><span class="tick"></span>Confluence-first logic (not single-indicator guessing)</div>
+              <div class="rowline"><span class="tick"></span>Dashboards that show the truth in one glance</div>
+              <div class="rowline"><span class="tick"></span>Filters designed to cut false positives and chop</div>
+              <div class="rowline"><span class="tick"></span>Actionable plans (signals + context + structure)</div>
+            </div>
+          </div>
+
+          <div class="mini">
+            <h3>Pricing</h3>
+            <p><b>Indicators:</b> $30 each • <b>Expert Advisors:</b> $100 each</p>
+            <p style="margin-top:10px; color:var(--muted); font-size:13.2px;">
+              Secure checkout via Paystack. After purchase, products are delivered to your email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<footer>
-  © 2025 ExpertAdvisors | For informational purposes only. Trading involves risk.
-</footer>
+  <!-- Indicators -->
+  <section id="indicators" class="anchor">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Indicators</h2>
+        <div class="hint">Two high-conviction tools engineered to turn market noise into a single readable verdict.</div>
+      </div>
 
+      <div class="grid">
+        <!-- T-Virus Sentiment -->
+        <article class="card">
+          <div class="head">
+            <span class="tag ind">Indicator</span>
+            <span class="price">$30</span>
+          </div>
+          <div class="title">
+            <h3>T-Virus Sentiment (MT5)</h3>
+            <p>Seven proven systems, distilled into one 0–100 “serum” gauge with signals, structure checks, and a win-rate panel.</p>
+          </div>
+
+          <div class="media">
+            <div class="imgwrap">
+              <img src="assets/images/tvirus.png" alt="T-Virus Sentiment indicator screenshot">
+            </div>
+          </div>
+
+          <div class="body">
+            <p class="lead">
+              Inspired by biology: when one strong factor “infects” a system, the state flips fast. Markets behave the same way.
+              T-Virus Sentiment captures that spread across indicators and converts it into a single decisive gauge.
+            </p>
+
+            <ul class="bullets">
+              <li><div class="ic">7</div><div><b>One serum score</b><br><span>RSI, EMA stack (9–250), MACD, ADX/DI, Ichimoku, Bollinger Bands, OBV — fused into one conviction reading.</span></div></li>
+              <li><div class="ic">%</div><div><b>Win-rate panel</b><br><span>Check timeframe performance instantly (Win%, AvgR, MFE/MAE) for a fast reality-check before you commit risk.</span></div></li>
+              <li><div class="ic">8</div><div><b>Scanner + heat map</b><br><span>Monitor multiple markets from one chart, rotate attention quickly, and spot conviction building or fading.</span></div></li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <!-- PAYSTACK LINK: replace # with your Paystack payment link for T-Virus -->
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy T-Virus ($30)</a>
+
+            <!-- Provided MQL5 link -->
+            <a class="btn link" href="https://www.mql5.com/en/market/product/148216?source=Site+Profile+Seller" target="_blank" rel="noopener">View on MQL5</a>
+
+            <a class="btn ghost" href="#buy">Purchase info</a>
+          </div>
+        </article>
+
+        <!-- VolumeRotor AI Pro with News -->
+        <article class="card">
+          <div class="head">
+            <span class="tag ind">Indicator</span>
+            <span class="price">$30</span>
+          </div>
+          <div class="title">
+            <h3>VolumeRotor AI Pro with News Guard™</h3>
+            <p>Real-time Buy vs Sell volume intelligence plus an MT5 Economic Calendar shield to keep you out of dangerous news windows.</p>
+          </div>
+
+          <div class="media">
+            <div class="imgwrap">
+              <img src="assets/images/volumetorAI.jpg" alt="VolumeRotor AI Pro with News indicator screenshot">
+            </div>
+          </div>
+
+          <div class="body">
+            <p class="lead">
+              Volume shows intent. News changes the game. VolumeRotor AI Pro combines both — a clean, modern UI that reveals
+              who’s in control and warns you when a high-impact event is about to rewrite the chart.
+            </p>
+
+            <ul class="bullets">
+              <li><div class="ic">AI</div><div><b>Donut + heatmap clarity</b><br><span>See Buy% vs Sell% and multi-timeframe confidence at a glance, with disciplined BUY/SELL/WAIT guidance.</span></div></li>
+              <li><div class="ic">⏱</div><div><b>News Guard™ countdown</b><br><span>Nearest event timer, impact labels, and shaded danger zones using MT5’s native calendar (no web setup).</span></div></li>
+              <li><div class="ic">ADX</div><div><b>Trend + strength confirmation</b><br><span>Edge% + EMA(50/200) alignment + ADX filter helps keep you out of chop and into real momentum.</span></div></li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <!-- PAYSTACK LINK: replace # with your Paystack payment link for VolumeRotor -->
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy VolumeRotor ($30)</a>
+
+            <!-- Optional: If you want, replace # with your MQL5 product link -->
+            <a class="btn link" href="#" target="_blank" rel="noopener">View details</a>
+
+            <a class="btn ghost" href="#buy">Purchase info</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expert Advisors -->
+  <section id="expertadvisors" class="anchor">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Expert Advisors</h2>
+        <div class="hint">Three robots with professional dashboards, session management, and strict risk controls — built for consistency, not gambling.</div>
+      </div>
+
+      <div class="grid">
+        <!-- Turbo 2030 Quantum Advanced -->
+        <article class="card">
+          <div class="head">
+            <span class="tag ea">Expert Advisor</span>
+            <span class="price">$100</span>
+          </div>
+          <div class="title">
+            <h3>Turbo 2030 Quantum Advanced</h3>
+            <p>Multi-mode basket trading suite: AUTO, MANUAL, and Turbo Range — plus ultra-fast batch execution and serious risk guards.</p>
+          </div>
+
+          <div class="media">
+            <div class="imgwrap" style="margin-bottom:12px;">
+              <img src="assets/images/turbopic.png" alt="Turbo 2030 EA screenshot">
+            </div>
+            <div class="imgwrap">
+              <video controls preload="metadata">
+                <source src="assets/videos/turbo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="body">
+            <p class="lead">
+              Built for speed and control. Turbo 2030 doesn’t just “enter trades” — it manages the entire session:
+              multi-market scanning, basket logic, recovery limits, and clear operational visibility through a dashboard.
+            </p>
+
+            <ul class="bullets">
+              <li><div class="ic">3</div><div><b>Triple-engine core</b><br><span>AUTO (RSI + MA), MANUAL controls, and Turbo Range scalping across multiple markets.</span></div></li>
+              <li><div class="ic">⚡</div><div><b>Ultra-fast batch execution</b><br><span>Opens trades in controlled batches with configurable delays to capture fast moves.</span></div></li>
+              <li><div class="ic">🛡</div><div><b>Risk + recovery suite</b><br><span>Persistent basket drawdown tracking, staged recovery logic, and separate basket/daily protection.</span></div></li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <!-- PAYSTACK LINK: replace # with your Paystack payment link for Turbo 2030 EA -->
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy Turbo 2030 ($100)</a>
+            <a class="btn ghost" href="#buy">Purchase info</a>
+          </div>
+        </article>
+
+        <!-- Advanced Market Sniper -->
+        <article class="card">
+          <div class="head">
+            <span class="tag ea">Expert Advisor</span>
+            <span class="price">$100</span>
+          </div>
+          <div class="title">
+            <h3>Advanced Market Sniper EA</h3>
+            <p>Precision trend trading with smart recovery, strict daily controls, and a transparent dashboard that shows exactly what the system is doing.</p>
+          </div>
+
+          <div class="media">
+            <div class="imgwrap">
+              <video controls preload="metadata">
+                <source src="assets/videos/marketsniper.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="body">
+            <p class="lead">
+              This is a discipline engine. Trades only when multi-timeframe bias and MA confirmation agree — and when conditions temporarily move against you,
+              recovery is controlled, capped, and aligned with trend instead of blind averaging.
+            </p>
+
+            <ul class="bullets">
+              <li><div class="ic">H1</div><div><b>Higher-timeframe bias</b><br><span>Uses H1 market structure to stay aligned with dominant direction and avoid noise.</span></div></li>
+              <li><div class="ic">MA</div><div><b>Dual-alignment rule</b><br><span>If H1 trend and MA confirmation conflict, it refuses to trade. No forced entries.</span></div></li>
+              <li><div class="ic">♻</div><div><b>Smart recovery (not blind martingale)</b><br><span>Triggers only after defined loss, capped recovery baskets, cooldown protection, and direction follows trend.</span></div></li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <!-- PAYSTACK LINK: replace # with your Paystack payment link for Market Sniper EA -->
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy Market Sniper ($100)</a>
+            <a class="btn ghost" href="#buy">Purchase info</a>
+          </div>
+        </article>
+
+        <!-- Quantum Emperor Candle Master -->
+        <article class="card">
+          <div class="head">
+            <span class="tag ea">Expert Advisor</span>
+            <span class="price">$100</span>
+          </div>
+          <div class="title">
+            <h3>Quantum Emperor Candle Master</h3>
+            <p>3-in-1 H1 swing robot built for basket trading (up to 5 markets) with a solid dashboard, basket TP, and daily limits.</p>
+          </div>
+
+          <div class="media">
+            <div class="imgwrap">
+              <video controls preload="metadata">
+                <source src="assets/videos/swingmaster.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="body">
+            <p class="lead">
+              A candle-reaction specialist: mean-reversion bands, liquidity sweeps, and ORB fade logic — wrapped in a session manager
+              that controls exposure, prevents overtrading, and closes baskets at your target.
+            </p>
+
+            <ul class="bullets">
+              <li><div class="ic">①</div><div><b>Bands Mode</b><br><span>Stretch → rejection → reversion back toward fair value with volatility awareness.</span></div></li>
+              <li><div class="ic">②</div><div><b>Sweep & Return</b><br><span>Detects liquidity sweeps and confirms the reclaim on a lower timeframe before entering.</span></div></li>
+              <li><div class="ic">③</div><div><b>ORB Fade</b><br><span>Opening range box logic to fade breakouts back into structure with clean buffer control.</span></div></li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <!-- PAYSTACK LINK: replace # with your Paystack payment link for Candle Master EA -->
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy Candle Master ($100)</a>
+            <a class="btn ghost" href="#buy">Purchase info</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purchase / Checkout -->
+  <section id="buy" class="anchor">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Purchase & Delivery</h2>
+        <div class="hint">Secure Paystack checkout. Products are emailed after purchase.</div>
+      </div>
+
+      <div class="mini" style="border-radius: var(--radius);">
+        <h3 style="margin:0 0 10px;">How purchase works</h3>
+        <div class="list">
+          <div class="rowline"><span class="tick"></span>Click a <b>Buy</b> button for the product you want.</div>
+          <div class="rowline"><span class="tick"></span>Complete payment via <b>Paystack</b>.</div>
+          <div class="rowline"><span class="tick"></span>Your product file(s) are sent to the <b>email</b> used at checkout.</div>
+          <div class="rowline"><span class="tick"></span>If you need help, contact support using the details on your receipt/checkout page.</div>
+        </div>
+
+        <p class="fine" style="margin-top:12px;">
+          <b>Important:</b> Ensure you enter the correct email on checkout. Delivery is by email after payment confirmation.
+        </p>
+
+        <div class="delivery" style="margin-top:14px;">
+          <div class="badge" aria-hidden="true"></div>
+          <div>
+            <p><b>Digital product notice:</b> These are digital MT5 products delivered electronically. No physical shipping.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footgrid">
+        <div>
+          <div class="brand">
+            <div class="logo" aria-hidden="true"></div>
+            <div>
+              <div style="font-size:14px; opacity:.92; font-weight:900;">Quantum EAs</div>
+              <div style="font-size:12px; color:var(--muted); font-weight:650;">MT5 Expert Advisors & Indicators</div>
+            </div>
+          </div>
+
+          <p class="fine">
+            <b>Risk disclaimer:</b> Trading involves risk. No indicator or EA can guarantee profits. Test on a demo account first, use proper position sizing,
+            and trade with discipline—especially around volatile news events.
+          </p>
+
+          <p class="fine" style="opacity:.85;">
+            © <span id="y"></span> Quantum EAs. All rights reserved.
+          </p>
+        </div>
+
+        <div class="footbox">
+          <h4>Quick links</h4>
+          <p>Jump to products and checkout.</p>
+          <div class="smalllinks">
+            <a href="#indicators">Indicators</a>
+            <a href="#expertadvisors">Expert Advisors</a>
+            <a href="#buy">Purchase</a>
+            <!-- Optional: add your WhatsApp/Telegram links here later -->
+          </div>
+
+          <p class="fine" style="margin-top:10px;">
+            Tip: if you later want faster video loading at scale, embed YouTube/Vimeo and keep GitHub for images + page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+  </script>
 </body>
 </html>
