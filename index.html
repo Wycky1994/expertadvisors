@@ -154,7 +154,7 @@
     .sub{
       color: var(--muted);
       font-size: 15.8px;
-      max-width: 62ch;
+      max-width: 72ch;
       margin: 0 0 18px;
     }
     .cta-row{
@@ -260,7 +260,7 @@
     .section-title .hint{
       color: var(--muted);
       font-size: 13.5px;
-      max-width: 65ch;
+      max-width: 76ch;
     }
 
     /* Product grid */
@@ -310,23 +310,11 @@
       color: rgba(255,255,255,.92);
       white-space:nowrap;
     }
-    .title{
-      padding: 0 18px 12px;
-    }
-    .title h3{
-      margin:0 0 6px;
-      font-size: 18px;
-      letter-spacing:-.2px;
-    }
-    .title p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .title{padding: 0 18px 12px;}
+    .title h3{margin:0 0 6px; font-size: 18px; letter-spacing:-.2px;}
+    .title p{margin:0; color: var(--muted); font-size: 14px;}
 
-    .media{
-      padding: 0 18px 14px;
-    }
+    .media{padding: 0 18px 14px;}
     .imgwrap{
       border-radius: var(--radius2);
       overflow:hidden;
@@ -334,12 +322,7 @@
       background: rgba(255,255,255,.02);
     }
     img{display:block; width:100%; height:auto}
-    video{
-      width:100%;
-      height:auto;
-      display:block;
-      background: #000;
-    }
+    video{width:100%; height:auto; display:block; background: #000;}
 
     .body{
       padding: 0 18px 18px;
@@ -349,12 +332,21 @@
     .body .lead{
       margin: 0 0 10px;
       font-size: 14px;
-      color: rgba(255,255,255,.88);
+      color: rgba(255,255,255,.90);
     }
-    .elegant{
-      margin: 0;
-      color: var(--muted);
+    .body .paragraphs{
+      display:grid;
+      gap:10px;
+      margin-top: 10px;
     }
+    .body .paragraphs p{
+      margin:0;
+      color: rgba(255,255,255,.84);
+    }
+    .body .paragraphs p strong{
+      color: rgba(255,255,255,.95);
+    }
+
     .bullets{
       margin: 12px 0 0;
       padding: 0;
@@ -383,6 +375,13 @@
     }
     .bullets li b{color: rgba(255,255,255,.92)}
     .bullets li span{color: var(--muted)}
+    .bullets li .subnote{
+      display:block;
+      margin-top:6px;
+      color: rgba(255,255,255,.68);
+      font-size: 12.8px;
+      line-height: 1.35;
+    }
 
     .actions{
       padding: 0 18px 18px;
@@ -392,8 +391,11 @@
       align-items:center;
     }
     .actions .btn{padding: 11px 12px; border-radius: 12px; font-size: 13.5px}
-    .actions .btn.buy{background: linear-gradient(135deg, rgba(46,233,166,1), rgba(124,92,255,1)); color:#071018; border: none;}
-    .actions .btn.link{border-color: rgba(255,255,255,.16)}
+    .actions .btn.buy{
+      background: linear-gradient(135deg, rgba(46,233,166,1), rgba(124,92,255,1));
+      color:#071018;
+      border: none;
+    }
     .actions .btn.ghost{background: rgba(255,255,255,.02)}
 
     /* Email delivery banner */
@@ -436,7 +438,7 @@
       color: var(--muted);
       font-size: 13.2px;
       margin: 8px 0 0;
-      max-width: 85ch;
+      max-width: 96ch;
     }
     .footbox{
       background: rgba(255,255,255,.03);
@@ -459,7 +461,6 @@
       color: rgba(255,255,255,.85);
     }
 
-    /* Smooth anchor offset for sticky topbar */
     .anchor{scroll-margin-top: 80px;}
   </style>
 </head>
@@ -517,7 +518,7 @@
             <div id="delivery" class="delivery anchor">
               <div class="badge" aria-hidden="true"></div>
               <div>
-                <p><b>Email delivery:</b> after payment, your product file(s) will be sent to your email address. Keep your receipt/reference and use the contact channel provided on the checkout page if you need assistance.</p>
+                <p><b>Email delivery:</b> after payment, your product file(s) will be sent to your email address. Ensure the email you enter at Paystack checkout is correct. Keep your payment reference/receipt for support.</p>
               </div>
             </div>
           </div>
@@ -551,7 +552,7 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Indicators</h2>
-        <div class="hint">Two high-conviction tools engineered to turn market noise into a single readable verdict.</div>
+        <div class="hint">Two high-conviction tools engineered to turn market noise into a single readable verdict — plus practical dashboards you can actually trade from.</div>
       </div>
 
       <div class="grid">
@@ -563,7 +564,7 @@
           </div>
           <div class="title">
             <h3>T-Virus Sentiment (MT5)</h3>
-            <p>Seven proven systems, distilled into one 0–100 “serum” gauge with signals, structure checks, and a win-rate panel.</p>
+            <p>Turn raw indicators into one decisive market “serum” (0–100), then get BUY/SELL signals only when structure and internal pressure agree.</p>
           </div>
 
           <div class="media">
@@ -574,24 +575,63 @@
 
           <div class="body">
             <p class="lead">
-              Inspired by biology: when one strong factor “infects” a system, the state flips fast. Markets behave the same way.
-              T-Virus Sentiment captures that spread across indicators and converts it into a single decisive gauge.
+              The core idea comes from biology: a single strong factor can “infect” a system and rapidly tilt its state. Markets behave the same way —
+              one impulse spreads across timeframes and symbols until the whole structure becomes risk-on or risk-off. T-Virus Sentiment captures that process
+              and distills it into a single serum gauge you can read in one second.
             </p>
 
+            <div class="paragraphs">
+              <p><strong>Seven voices, one verdict.</strong> Instead of reading RSI, then confirming with moving averages, then checking MACD, then second-guessing trend strength,
+                T-Virus scores each subsystem and blends them into one conviction score. The panel makes the reasoning visible using chip badges, pressure bars,
+                and a clean “serum” meter from 0–100.</p>
+
+              <p><strong>Signals that require agreement.</strong> The indicator doesn’t promote noise. A BUY/SELL only appears when the serum has crossed your threshold
+                (for example ≥58 for longs or ≤42 for shorts), internal candle pressure supports direction, trend quality is present (ADX filter),
+                and enough of the 7 subsystems agree (bulls vs bears count). This combination is designed to reduce false positives dramatically.</p>
+
+              <p><strong>Win-rate matters — and it’s visible.</strong> You’re reminded to trade the best edges, not every signal. The panel includes micro backtest metrics
+                on recent signals (Win%, AvgR, MFE/MAE). If H1 shows 86% win rate, you immediately know where the opportunity quality is highest.</p>
+
+              <p><strong>Scanner + heatmap = faster decisions.</strong> Monitor multiple symbols/timeframes from one chart (editable symbols list).
+                The scanner card shows instant BUY/SELL/WAIT states plus serum values, and a compact heat map shows how sentiment evolved across recent bars,
+                so you can spot building momentum or fading conviction.</p>
+            </div>
+
             <ul class="bullets">
-              <li><div class="ic">7</div><div><b>One serum score</b><br><span>RSI, EMA stack (9–250), MACD, ADX/DI, Ichimoku, Bollinger Bands, OBV — fused into one conviction reading.</span></div></li>
-              <li><div class="ic">%</div><div><b>Win-rate panel</b><br><span>Check timeframe performance instantly (Win%, AvgR, MFE/MAE) for a fast reality-check before you commit risk.</span></div></li>
-              <li><div class="ic">8</div><div><b>Scanner + heat map</b><br><span>Monitor multiple markets from one chart, rotate attention quickly, and spot conviction building or fading.</span></div></li>
+              <li>
+                <div class="ic">7</div>
+                <div>
+                  <b>Signal fusion engine</b><br>
+                  <span>RSI, EMA stack (9/21/50/100/200/250), MACD, ADX/DI, Ichimoku, Bollinger Bands, OBV — scored, weighted, and combined into one serum.</span>
+                  <span class="subnote">You can change SigMode (Aggressive / Moderate / Conservative) to match your risk appetite.</span>
+                </div>
+              </li>
+              <li>
+                <div class="ic">%</div>
+                <div>
+                  <b>Micro backtest panel</b><br>
+                  <span>Shows Win%, AvgR, and MFE/MAE on recent signals — a fast reality-check without running the strategy tester.</span>
+                </div>
+              </li>
+              <li>
+                <div class="ic">8</div>
+                <div>
+                  <b>Multi-market scanner + heat map</b><br>
+                  <span>Monitor up to 8 symbols/timeframes from one chart, get BUY/SELL/WAIT status, and visualize conviction history.</span>
+                </div>
+              </li>
+              <li>
+                <div class="ic">🔔</div>
+                <div>
+                  <b>Alerts your way</b><br>
+                  <span>Popup, sound, push, and email alerts so you never miss a high-conviction setup.</span>
+                </div>
+              </li>
             </ul>
           </div>
 
           <div class="actions">
-            <!-- PAYSTACK LINK: replace # with your Paystack payment link for T-Virus -->
-            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy T-Virus ($30)</a>
-
-            <!-- Provided MQL5 link -->
-            <a class="btn link" href="https://www.mql5.com/en/market/product/148216?source=Site+Profile+Seller" target="_blank" rel="noopener">View on MQL5</a>
-
+            <a class="btn buy" href="https://paystack.com/buy/indicators-ufgqri" target="_blank" rel="noopener">Buy Indicator ($30)</a>
             <a class="btn ghost" href="#buy">Purchase info</a>
           </div>
         </article>
@@ -604,7 +644,7 @@
           </div>
           <div class="title">
             <h3>VolumeRotor AI Pro with News Guard™</h3>
-            <p>Real-time Buy vs Sell volume intelligence plus an MT5 Economic Calendar shield to keep you out of dangerous news windows.</p>
+            <p>Real-time Buy vs Sell volume intelligence + a built-in MT5 Economic Calendar shield to protect you from high-impact surprises.</p>
           </div>
 
           <div class="media">
@@ -615,24 +655,61 @@
 
           <div class="body">
             <p class="lead">
-              Volume shows intent. News changes the game. VolumeRotor AI Pro combines both — a clean, modern UI that reveals
-              who’s in control and warns you when a high-impact event is about to rewrite the chart.
+              Volume shows intent. News changes the rules. VolumeRotor AI Pro is designed for traders who want to see control (Buy% vs Sell%)
+              and avoid account-blowing moments caused by sudden economic releases.
             </p>
 
+            <div class="paragraphs">
+              <p><strong>Read the market without guessing.</strong> The indicator displays real-time market volume behavior on every timeframe
+                (from M1 up through higher TFs). It partitions tick volume into Buy vs Sell using close location logic, then computes Edge% (Buy% − Sell%)
+                so you can measure momentum, not just feel it.</p>
+
+              <p><strong>Signal discipline built in.</strong> Signals are not random: BUY/SELL/WAIT guidance is suggested only when Edge% meets your threshold,
+                EMA(50/200) trend agrees, and ADX confirms strength. If conditions are mixed, it keeps you in WAIT — a simple rule that saves traders in chop.</p>
+
+              <p><strong>News Guard™ makes it a serious tool.</strong> The biggest upgrade is the built-in MT5 Economic Calendar integration:
+                automatic currency detection (USD/EUR/GBP/JPY/AUD/NZD/CAD/CHF), nearest-event countdown, impact label, and shaded danger windows
+                before/after releases. This gives you timing awareness without opening extra tabs or websites.</p>
+
+              <p><strong>Designed like a product, not a script.</strong> A modern on-chart UI includes the AI donut gauge, MTF confidence heatmap,
+                session shading (Tokyo/London/New York), and a stats footer (ATR, spread, signal age). Everything is meant to be read at a glance.</p>
+            </div>
+
             <ul class="bullets">
-              <li><div class="ic">AI</div><div><b>Donut + heatmap clarity</b><br><span>See Buy% vs Sell% and multi-timeframe confidence at a glance, with disciplined BUY/SELL/WAIT guidance.</span></div></li>
-              <li><div class="ic">⏱</div><div><b>News Guard™ countdown</b><br><span>Nearest event timer, impact labels, and shaded danger zones using MT5’s native calendar (no web setup).</span></div></li>
-              <li><div class="ic">ADX</div><div><b>Trend + strength confirmation</b><br><span>Edge% + EMA(50/200) alignment + ADX filter helps keep you out of chop and into real momentum.</span></div></li>
+              <li>
+                <div class="ic">AI</div>
+                <div>
+                  <b>Donut gauge + MTF heatmap</b><br>
+                  <span>Live Buy% vs Sell% with a compact multi-timeframe confidence view — clarity without clutter.</span>
+                </div>
+              </li>
+              <li>
+                <div class="ic">⏱</div>
+                <div>
+                  <b>News Guard™ protection</b><br>
+                  <span>Countdown to nearest event, impact filters (High/Medium/Low), look-ahead hours, and shaded danger zones.</span>
+                  <span class="subnote">Uses MT5’s native calendar (Tools → Options → Server → Enable news). If calendar is unavailable, the indicator continues working and shows “Calendar off/unavailable”.</span>
+                </div>
+              </li>
+              <li>
+                <div class="ic">ADX</div>
+                <div>
+                  <b>Trend + strength confirmation</b><br>
+                  <span>EMA(50/200) alignment + ADX threshold + Edge% helps avoid false momentum signals.</span>
+                </div>
+              </li>
+              <li>
+                <div class="ic">🔔</div>
+                <div>
+                  <b>Smart alerts</b><br>
+                  <span>Signal change alerts, Edge% cross alerts, ADX confirmation, volume spike alerts, and news timing alerts.</span>
+                </div>
+              </li>
             </ul>
           </div>
 
           <div class="actions">
-            <!-- PAYSTACK LINK: replace # with your Paystack payment link for VolumeRotor -->
-            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy VolumeRotor ($30)</a>
-
-            <!-- Optional: If you want, replace # with your MQL5 product link -->
-            <a class="btn link" href="#" target="_blank" rel="noopener">View details</a>
-
+            <a class="btn buy" href="https://paystack.com/buy/indicators-ufgqri" target="_blank" rel="noopener">Buy Indicator ($30)</a>
             <a class="btn ghost" href="#buy">Purchase info</a>
           </div>
         </article>
@@ -645,7 +722,7 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Expert Advisors</h2>
-        <div class="hint">Three robots with professional dashboards, session management, and strict risk controls — built for consistency, not gambling.</div>
+        <div class="hint">Three automated systems with dashboards, basket/session management, and strict limits — built for consistency, not gambling.</div>
       </div>
 
       <div class="grid">
@@ -657,7 +734,7 @@
           </div>
           <div class="title">
             <h3>Turbo 2030 Quantum Advanced</h3>
-            <p>Multi-mode basket trading suite: AUTO, MANUAL, and Turbo Range — plus ultra-fast batch execution and serious risk guards.</p>
+            <p>Triple-engine basket trading suite with ultra-fast batch execution, session controls, and a professional on-chart command center.</p>
           </div>
 
           <div class="media">
@@ -674,20 +751,35 @@
 
           <div class="body">
             <p class="lead">
-              Built for speed and control. Turbo 2030 doesn’t just “enter trades” — it manages the entire session:
-              multi-market scanning, basket logic, recovery limits, and clear operational visibility through a dashboard.
+              Turbo 2030 is not “just another EA.” It is a complete trading suite engineered for speed, multi-market exploitation, and operational control.
+              It scans, executes, manages baskets, tracks drawdown, and enforces daily limits — all from a clean dashboard.
             </p>
 
+            <div class="paragraphs">
+              <p><strong>Three engines in one system.</strong> Switch between AUTO mode (RSI for market condition + MA for entries), MANUAL mode (you control direction/decisions),
+                and Turbo Range mode (a multi-market scalping engine based on MA signals across different pairs). This is built for traders who want options,
+                not a single rigid behavior.</p>
+
+              <p><strong>Ultra-fast execution where it matters.</strong> Turbo 2030 supports batch trade opening with configurable delays, designed to reduce slippage
+                and capture entries closer to intended price in fast markets. The execution approach is engineered for speed without losing safety rails.</p>
+
+              <p><strong>Risk management is the product.</strong> Persistent basket drawdown tracking, enhanced recovery cycles with controlled multipliers,
+                separate stop systems for baskets and daily trading, and profit management that can close a basket and restart (or stop for the day) depending on your settings.</p>
+
+              <p><strong>Visibility + controls.</strong> The dashboard acts as a command center: monitor basket P/L, mode state, recovery status, trade counts,
+                and key conditions without guessing what the EA is doing.</p>
+            </div>
+
             <ul class="bullets">
-              <li><div class="ic">3</div><div><b>Triple-engine core</b><br><span>AUTO (RSI + MA), MANUAL controls, and Turbo Range scalping across multiple markets.</span></div></li>
-              <li><div class="ic">⚡</div><div><b>Ultra-fast batch execution</b><br><span>Opens trades in controlled batches with configurable delays to capture fast moves.</span></div></li>
-              <li><div class="ic">🛡</div><div><b>Risk + recovery suite</b><br><span>Persistent basket drawdown tracking, staged recovery logic, and separate basket/daily protection.</span></div></li>
+              <li><div class="ic">3</div><div><b>Triple-engine core</b><br><span>AUTO (RSI+MA), MANUAL controls, Turbo Range scalping engine.</span></div></li>
+              <li><div class="ic">⚡</div><div><b>Batch execution</b><br><span>Opens multiple trades with smart delays to capture fast opportunities.</span></div></li>
+              <li><div class="ic">🛡</div><div><b>Protection suite</b><br><span>Persistent drawdown tracker, staged recovery, basket & daily stop logic.</span></div></li>
+              <li><div class="ic">📊</div><div><b>Professional dashboard</b><br><span>Real-time transparency: status, P/L, mode, exposure, and session controls.</span></div></li>
             </ul>
           </div>
 
           <div class="actions">
-            <!-- PAYSTACK LINK: replace # with your Paystack payment link for Turbo 2030 EA -->
-            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy Turbo 2030 ($100)</a>
+            <a class="btn buy" href="https://paystack.com/buy/expertadvisor-jcelvf" target="_blank" rel="noopener">Buy Expert Advisor ($100)</a>
             <a class="btn ghost" href="#buy">Purchase info</a>
           </div>
         </article>
@@ -700,7 +792,7 @@
           </div>
           <div class="title">
             <h3>Advanced Market Sniper EA</h3>
-            <p>Precision trend trading with smart recovery, strict daily controls, and a transparent dashboard that shows exactly what the system is doing.</p>
+            <p>Precision trend entries with smart recovery, strict daily protections, and a transparent dashboard that shows every decision.</p>
           </div>
 
           <div class="media">
@@ -714,20 +806,38 @@
 
           <div class="body">
             <p class="lead">
-              This is a discipline engine. Trades only when multi-timeframe bias and MA confirmation agree — and when conditions temporarily move against you,
-              recovery is controlled, capped, and aligned with trend instead of blind averaging.
+              Advanced Market Sniper is a professional-grade discipline engine. It trades only when multi-timeframe direction and moving-average momentum agree —
+              then manages baskets with strict risk rules and controlled recovery logic designed to protect capital.
             </p>
 
+            <div class="paragraphs">
+              <p><strong>H1 structure first.</strong> The EA reads higher-timeframe swing highs/lows to determine dominant bias. This filters out noise and reduces
+                the “random entry” behavior that destroys most automated systems in ranging markets.</p>
+
+              <p><strong>MA confirmation on the running timeframe.</strong> Entries require price vs MA alignment to confirm momentum. If there is any conflict between H1 direction and MA trend,
+                the EA refuses to trade. That simple refusal rule is where win-rate and drawdown control usually improve.</p>
+
+              <p><strong>Basket system with controlled exposure.</strong> Instead of a single position, the EA can manage a basket of trades with shared profit target and stop logic,
+                allowing smoother exits and controlled recovery from minor pullbacks.</p>
+
+              <p><strong>Smart recovery, not blind martingale.</strong> Recovery triggers only after a defined dollar loss, is capped to a maximum number of recovery baskets,
+                follows MA direction (not guesswork), and includes cooldown protection to prevent runaway behavior.</p>
+
+              <p><strong>Daily and drawdown protection.</strong> Daily profit target stop, daily stop loss, and max equity drawdown protection can close all trades and stop trading
+                when limits are hit. Capital protection is treated as a first-class feature.</p>
+            </div>
+
             <ul class="bullets">
-              <li><div class="ic">H1</div><div><b>Higher-timeframe bias</b><br><span>Uses H1 market structure to stay aligned with dominant direction and avoid noise.</span></div></li>
-              <li><div class="ic">MA</div><div><b>Dual-alignment rule</b><br><span>If H1 trend and MA confirmation conflict, it refuses to trade. No forced entries.</span></div></li>
-              <li><div class="ic">♻</div><div><b>Smart recovery (not blind martingale)</b><br><span>Triggers only after defined loss, capped recovery baskets, cooldown protection, and direction follows trend.</span></div></li>
+              <li><div class="ic">H1</div><div><b>Higher-timeframe bias</b><br><span>Trades with structure, not noise — trend determined by H1 swing logic.</span></div></li>
+              <li><div class="ic">MA</div><div><b>Dual-alignment rule</b><br><span>H1 trend + MA trend must agree; otherwise it stays flat.</span></div></li>
+              <li><div class="ic">♻</div><div><b>Intelligent recovery</b><br><span>Loss-triggered, capped, trend-aligned recovery with cooldowns — not reckless averaging.</span></div></li>
+              <li><div class="ic">🛡</div><div><b>Capital protection</b><br><span>Daily target stop, daily stop loss, and max drawdown safety logic.</span></div></li>
+              <li><div class="ic">📊</div><div><b>Live dashboard</b><br><span>Shows trend direction, alignment status, basket stats, recovery state, and trading status.</span></div></li>
             </ul>
           </div>
 
           <div class="actions">
-            <!-- PAYSTACK LINK: replace # with your Paystack payment link for Market Sniper EA -->
-            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy Market Sniper ($100)</a>
+            <a class="btn buy" href="https://paystack.com/buy/expertadvisor-jcelvf" target="_blank" rel="noopener">Buy Expert Advisor ($100)</a>
             <a class="btn ghost" href="#buy">Purchase info</a>
           </div>
         </article>
@@ -740,7 +850,7 @@
           </div>
           <div class="title">
             <h3>Quantum Emperor Candle Master</h3>
-            <p>3-in-1 H1 swing robot built for basket trading (up to 5 markets) with a solid dashboard, basket TP, and daily limits.</p>
+            <p>3-in-1 H1 swing robot for multi-symbol basket trading (up to 5 markets) with a solid dashboard, basket TP, and daily trading limits.</p>
           </div>
 
           <div class="media">
@@ -754,20 +864,38 @@
 
           <div class="body">
             <p class="lead">
-              A candle-reaction specialist: mean-reversion bands, liquidity sweeps, and ORB fade logic — wrapped in a session manager
-              that controls exposure, prevents overtrading, and closes baskets at your target.
+              Candle Master is built around one truth: on H1, price reacts to extremes and structure in repeatable ways.
+              It gives you three distinct engines for “candle reaction” trading — mean reversion, liquidity sweeps, and opening-range fades —
+              then wraps them in a session manager that controls overtrading, basket profits, and daily limits.
             </p>
 
+            <div class="paragraphs">
+              <p><strong>Bands Mode (Mean-Reversion).</strong> Builds a volatility band around either the H1 Open or EMA(20) on H1.
+                Price stretches to the band edge, confirms with RSI filter and a rejection candle, then enters back toward fair value.
+                This is classic swing mean-reversion with structure awareness.</p>
+
+              <p><strong>Sweep & Return Mode (Liquidity Engineering).</strong> Detects liquidity sweeps of the previous H1 high/low,
+                then waits for a reclaim confirmation using a lower timeframe rejection candle (default M5).
+                It targets the “fake breakout → return” move that catches most retail traders.</p>
+
+              <p><strong>ORB Fade Mode (Opening Range Box).</strong> Builds an opening range box for the first X minutes of the hour (default 15),
+                waits for a touch and rejection, and fades the breakout back inside the range. Designed for clean, rule-based entries with buffer control.</p>
+
+              <p><strong>Basket engine + session controls.</strong> Runs up to 5 symbols simultaneously, can close all trades when basket profit hits target,
+                and can stop trading when a daily target or daily max loss is reached — a true session manager, not a “fire and forget” entry bot.</p>
+            </div>
+
             <ul class="bullets">
-              <li><div class="ic">①</div><div><b>Bands Mode</b><br><span>Stretch → rejection → reversion back toward fair value with volatility awareness.</span></div></li>
-              <li><div class="ic">②</div><div><b>Sweep & Return</b><br><span>Detects liquidity sweeps and confirms the reclaim on a lower timeframe before entering.</span></div></li>
-              <li><div class="ic">③</div><div><b>ORB Fade</b><br><span>Opening range box logic to fade breakouts back into structure with clean buffer control.</span></div></li>
+              <li><div class="ic">①</div><div><b>Bands Mode</b><br><span>Stretch → rejection → reversion toward fair value with volatility bands and RSI filter.</span></div></li>
+              <li><div class="ic">②</div><div><b>Sweep & Return</b><br><span>Liquidity sweep detection + reclaim confirmation (M5 by default) before entry.</span></div></li>
+              <li><div class="ic">③</div><div><b>ORB Fade</b><br><span>Opening range box logic to fade breakouts back into structure with buffers.</span></div></li>
+              <li><div class="ic">🧺</div><div><b>Basket profit management</b><br><span>Closes everything at basket TP and can enforce daily target / daily max loss stops.</span></div></li>
+              <li><div class="ic">📊</div><div><b>Solid dashboard</b><br><span>Symbols, open trades split, floating P/L, spread, counts, and session stats in one view.</span></div></li>
             </ul>
           </div>
 
           <div class="actions">
-            <!-- PAYSTACK LINK: replace # with your Paystack payment link for Candle Master EA -->
-            <a class="btn buy" href="#" target="_blank" rel="noopener">Buy Candle Master ($100)</a>
+            <a class="btn buy" href="https://paystack.com/buy/expertadvisor-jcelvf" target="_blank" rel="noopener">Buy Expert Advisor ($100)</a>
             <a class="btn ghost" href="#buy">Purchase info</a>
           </div>
         </article>
@@ -786,20 +914,23 @@
       <div class="mini" style="border-radius: var(--radius);">
         <h3 style="margin:0 0 10px;">How purchase works</h3>
         <div class="list">
-          <div class="rowline"><span class="tick"></span>Click a <b>Buy</b> button for the product you want.</div>
+          <div class="rowline"><span class="tick"></span>Select a product above and click <b>Buy</b>.</div>
           <div class="rowline"><span class="tick"></span>Complete payment via <b>Paystack</b>.</div>
-          <div class="rowline"><span class="tick"></span>Your product file(s) are sent to the <b>email</b> used at checkout.</div>
-          <div class="rowline"><span class="tick"></span>If you need help, contact support using the details on your receipt/checkout page.</div>
+          <div class="rowline"><span class="tick"></span>Product file(s) are delivered to the <b>email</b> used at checkout.</div>
+          <div class="rowline"><span class="tick"></span>Keep your payment reference/receipt for support.</div>
         </div>
 
         <p class="fine" style="margin-top:12px;">
-          <b>Important:</b> Ensure you enter the correct email on checkout. Delivery is by email after payment confirmation.
+          <b>Links:</b>
+          Indicators checkout → <a href="https://paystack.com/buy/indicators-ufgqri" target="_blank" rel="noopener" style="text-decoration:underline;">Pay for Indicators ($30)</a>
+          &nbsp; • &nbsp;
+          Expert Advisors checkout → <a href="https://paystack.com/buy/expertadvisor-jcelvf" target="_blank" rel="noopener" style="text-decoration:underline;">Pay for Expert Advisors ($100)</a>
         </p>
 
         <div class="delivery" style="margin-top:14px;">
           <div class="badge" aria-hidden="true"></div>
           <div>
-            <p><b>Digital product notice:</b> These are digital MT5 products delivered electronically. No physical shipping.</p>
+            <p><b>Digital delivery notice:</b> These are MT5 digital products delivered electronically by email after payment confirmation. No physical shipping.</p>
           </div>
         </div>
       </div>
@@ -836,11 +967,10 @@
             <a href="#indicators">Indicators</a>
             <a href="#expertadvisors">Expert Advisors</a>
             <a href="#buy">Purchase</a>
-            <!-- Optional: add your WhatsApp/Telegram links here later -->
           </div>
 
           <p class="fine" style="margin-top:10px;">
-            Tip: if you later want faster video loading at scale, embed YouTube/Vimeo and keep GitHub for images + page.
+            Tip: If you later want faster video loading at scale, embed YouTube/Vimeo and keep GitHub for images + page.
           </p>
         </div>
       </div>
@@ -848,7 +978,6 @@
   </footer>
 
   <script>
-    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
 
     // Smooth scroll for internal links
