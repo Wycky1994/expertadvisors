@@ -12,7 +12,6 @@
     :root{
       --bg:#070a12;
       --panel:#0c1223;
-      --panel2:#0b1020;
       --text:#e9edf7;
       --muted:#aab3c7;
       --line:rgba(255,255,255,.10);
@@ -154,7 +153,7 @@
     .sub{
       color: var(--muted);
       font-size: 15.8px;
-      max-width: 72ch;
+      max-width: 74ch;
       margin: 0 0 18px;
     }
     .cta-row{
@@ -260,7 +259,7 @@
     .section-title .hint{
       color: var(--muted);
       font-size: 13.5px;
-      max-width: 76ch;
+      max-width: 84ch;
     }
 
     /* Product grid */
@@ -564,7 +563,7 @@
           </div>
           <div class="title">
             <h3>T-Virus Sentiment (MT5)</h3>
-            <p>Turn raw indicators into one decisive market “serum” (0–100), then get BUY/SELL signals only when structure and internal pressure agree.</p>
+            <p>Seven proven systems, distilled into one 0–100 “serum” gauge with signals, structure checks, a scanner, and a win-rate panel.</p>
           </div>
 
           <div class="media">
@@ -575,56 +574,69 @@
 
           <div class="body">
             <p class="lead">
-              The core idea comes from biology: a single strong factor can “infect” a system and rapidly tilt its state. Markets behave the same way —
-              one impulse spreads across timeframes and symbols until the whole structure becomes risk-on or risk-off. T-Virus Sentiment captures that process
-              and distills it into a single serum gauge you can read in one second.
+              The concept comes from biology: a single factor can “infect” a system and rapidly tilt its state. Markets behave the same way —
+              one strong impulse spreads across timeframes and symbols until the whole structure turns risk-on or risk-off.
+              T-Virus Sentiment captures that process and distills seven proven signals into a single 0–100 “serum” gauge.
             </p>
 
             <div class="paragraphs">
-              <p><strong>Seven voices, one verdict.</strong> Instead of reading RSI, then confirming with moving averages, then checking MACD, then second-guessing trend strength,
-                T-Virus scores each subsystem and blends them into one conviction score. The panel makes the reasoning visible using chip badges, pressure bars,
-                and a clean “serum” meter from 0–100.</p>
+              <p><strong>What it does, at a glance.</strong> T-Virus blends RSI, an EMA stack (9/21/50/100/200/250), MACD, ADX/DI, Ichimoku,
+                Bollinger Bands, and OBV into one conviction score. The dashboard shows your serum gauge, signal chips for each subsystem,
+                compact stats, and buy/sell pressure bars that reveal who is really controlling the candle internals.</p>
 
-              <p><strong>Signals that require agreement.</strong> The indicator doesn’t promote noise. A BUY/SELL only appears when the serum has crossed your threshold
-                (for example ≥58 for longs or ≤42 for shorts), internal candle pressure supports direction, trend quality is present (ADX filter),
-                and enough of the 7 subsystems agree (bulls vs bears count). This combination is designed to reduce false positives dramatically.</p>
+              <p><strong>Why signals are cleaner.</strong> A BUY/SELL signal is not just “RSI crossed.” The tool promotes a signal only when:
+                the serum is beyond your threshold (e.g., ≥58 for longs or ≤42 for shorts), internal buy/sell pressure supports direction,
+                trend quality is present (ADX filter), and enough of the 7 subsystems agree (bulls vs bears count).
+                This is designed specifically to cut false positives and “pretty arrows” that fail in chop.</p>
 
-              <p><strong>Win-rate matters — and it’s visible.</strong> You’re reminded to trade the best edges, not every signal. The panel includes micro backtest metrics
-                on recent signals (Win%, AvgR, MFE/MAE). If H1 shows 86% win rate, you immediately know where the opportunity quality is highest.</p>
+              <p><strong>Reality-check built into the panel.</strong> The micro backtest metrics summarize the last set of signals as Win%,
+                AvgR, and MFE/MAE — a fast performance snapshot without running the strategy tester. The win-rate readout helps you identify
+                the best market opportunities by timeframe (for example, if H1 shows 86% win rate, that is where the edge is strongest).</p>
 
-              <p><strong>Scanner + heatmap = faster decisions.</strong> Monitor multiple symbols/timeframes from one chart (editable symbols list).
-                The scanner card shows instant BUY/SELL/WAIT states plus serum values, and a compact heat map shows how sentiment evolved across recent bars,
-                so you can spot building momentum or fading conviction.</p>
+              <p><strong>Scanner + heat map for fast rotation.</strong> Monitor multiple markets from one chart (editable symbols list).
+                The scanner card shows BUY/SELL/WAIT status alongside the serum % so you can rotate attention instantly, while the heat map
+                shows how conviction evolved across the latest bars to spot momentum building or fading.</p>
+
+              <p><strong>Trade playbook (simple).</strong> Attach to any chart, wait for the arrow, and trade with structure discipline.
+                Use the printed plan: SL at the red line, scale at TP1, trail or exit at TP2. Keep ADX ≥ 15 as a default chop filter,
+                then combine with your S/R and session timing for best results.</p>
             </div>
 
             <ul class="bullets">
               <li>
                 <div class="ic">7</div>
                 <div>
-                  <b>Signal fusion engine</b><br>
-                  <span>RSI, EMA stack (9/21/50/100/200/250), MACD, ADX/DI, Ichimoku, Bollinger Bands, OBV — scored, weighted, and combined into one serum.</span>
-                  <span class="subnote">You can change SigMode (Aggressive / Moderate / Conservative) to match your risk appetite.</span>
+                  <b>Serum fusion engine (0–100)</b><br>
+                  <span>Seven subsystems become one readable conviction meter — clarity without indicator chaos.</span>
                 </div>
               </li>
               <li>
                 <div class="ic">%</div>
                 <div>
                   <b>Micro backtest panel</b><br>
-                  <span>Shows Win%, AvgR, and MFE/MAE on recent signals — a fast reality-check without running the strategy tester.</span>
+                  <span>Win%, AvgR, MFE/MAE on recent signals for a quick optimization reality-check.</span>
+                  <span class="subnote">Always check the win-rate panel to identify the best timeframe/market opportunities.</span>
                 </div>
               </li>
               <li>
                 <div class="ic">8</div>
                 <div>
                   <b>Multi-market scanner + heat map</b><br>
-                  <span>Monitor up to 8 symbols/timeframes from one chart, get BUY/SELL/WAIT status, and visualize conviction history.</span>
+                  <span>Monitor up to 8 symbols/timeframes from one chart, with instant BUY/SELL/WAIT status + serum readouts.</span>
+                </div>
+              </li>
+              <li>
+                <div class="ic">⚙</div>
+                <div>
+                  <b>SigMode customization</b><br>
+                  <span>Switch between Aggressive / Moderate / Conservative signal modes to match your trading style.</span>
                 </div>
               </li>
               <li>
                 <div class="ic">🔔</div>
                 <div>
                   <b>Alerts your way</b><br>
-                  <span>Popup, sound, push, and email alerts so you never miss a high-conviction setup.</span>
+                  <span>Popup, sound, push, and email alerts so you don’t miss high-conviction shifts.</span>
                 </div>
               </li>
             </ul>
@@ -644,7 +656,7 @@
           </div>
           <div class="title">
             <h3>VolumeRotor AI Pro with News Guard™</h3>
-            <p>Real-time Buy vs Sell volume intelligence + a built-in MT5 Economic Calendar shield to protect you from high-impact surprises.</p>
+            <p>Real-time buy vs sell volume intelligence, a disciplined signal engine, and a built-in MT5 economic calendar shield.</p>
           </div>
 
           <div class="media">
@@ -655,54 +667,61 @@
 
           <div class="body">
             <p class="lead">
-              Volume shows intent. News changes the rules. VolumeRotor AI Pro is designed for traders who want to see control (Buy% vs Sell%)
-              and avoid account-blowing moments caused by sudden economic releases.
+              VolumeRotor AI Pro is an upgrade focused on one thing traders struggle with: clarity under pressure.
+              It visualizes who’s in control (Buy% vs Sell%), confirms trend and strength, and adds News Guard™ so you don’t get blindsided
+              by high-impact releases that flip the chart in seconds.
             </p>
 
             <div class="paragraphs">
-              <p><strong>Read the market without guessing.</strong> The indicator displays real-time market volume behavior on every timeframe
-                (from M1 up through higher TFs). It partitions tick volume into Buy vs Sell using close location logic, then computes Edge% (Buy% − Sell%)
-                so you can measure momentum, not just feel it.</p>
+              <p><strong>Real-time volume analysis you can act on.</strong> The indicator reads tick-volume on your current timeframe and partitions it
+                into Buy vs Sell using the close’s position within the bar (relative to high/low). It then computes Edge% (Buy% − Sell%),
+                giving you a fast measure of momentum imbalance instead of a vague “it feels bullish” guess.</p>
 
-              <p><strong>Signal discipline built in.</strong> Signals are not random: BUY/SELL/WAIT guidance is suggested only when Edge% meets your threshold,
-                EMA(50/200) trend agrees, and ADX confirms strength. If conditions are mixed, it keeps you in WAIT — a simple rule that saves traders in chop.</p>
+              <p><strong>Signal engine with discipline.</strong> BUY/SELL/WAIT guidance is suggested only when three things align:
+                Edge% crosses your threshold, EMA(50/200) trend agrees, and ADX confirms strength.
+                If alignment is missing, it stays on WAIT — the feature that keeps you out of chop and protects your equity curve.</p>
 
-              <p><strong>News Guard™ makes it a serious tool.</strong> The biggest upgrade is the built-in MT5 Economic Calendar integration:
-                automatic currency detection (USD/EUR/GBP/JPY/AUD/NZD/CAD/CHF), nearest-event countdown, impact label, and shaded danger windows
-                before/after releases. This gives you timing awareness without opening extra tabs or websites.</p>
+              <p><strong>News Guard™ (built-in MT5 economic calendar).</strong> The panel automatically detects currency from the symbol
+                (USD/EUR/GBP/JPY/AUD/NZD/CAD/CHF). It then shows nearest-event countdown with impact label
+                (e.g., “News in 06:21:02 — USD CPI (High)”), supports impact filtering, and shades a danger window before/after the release.
+                No web setup: it uses MT5’s native calendar. If your broker/build disables calendar, the panel shows “Calendar off/unavailable”
+                and all other features keep working.</p>
 
-              <p><strong>Designed like a product, not a script.</strong> A modern on-chart UI includes the AI donut gauge, MTF confidence heatmap,
-                session shading (Tokyo/London/New York), and a stats footer (ATR, spread, signal age). Everything is meant to be read at a glance.</p>
+              <p><strong>Modern UI that reads in one second.</strong> AI donut gauge, MTF confidence heatmap, session shading (Tokyo/London/New York),
+                and a stats footer (ATR, spread, signal age). Optional simulation overlay can add “market feel” visuals while keeping candles readable.</p>
+
+              <p><strong>Alerts that match real trading workflows.</strong> Optional notifications for signal changes, Edge% crosses, ADX confirmation,
+                volume spikes vs rolling volume MA, and News Guard timings (pre-release, at release, post-release).</p>
             </div>
 
             <ul class="bullets">
               <li>
                 <div class="ic">AI</div>
                 <div>
-                  <b>Donut gauge + MTF heatmap</b><br>
-                  <span>Live Buy% vs Sell% with a compact multi-timeframe confidence view — clarity without clutter.</span>
+                  <b>Donut + heatmap clarity</b><br>
+                  <span>Buy% vs Sell% + multi-timeframe confidence tiles for fast directional reads.</span>
                 </div>
               </li>
               <li>
                 <div class="ic">⏱</div>
                 <div>
-                  <b>News Guard™ protection</b><br>
-                  <span>Countdown to nearest event, impact filters (High/Medium/Low), look-ahead hours, and shaded danger zones.</span>
-                  <span class="subnote">Uses MT5’s native calendar (Tools → Options → Server → Enable news). If calendar is unavailable, the indicator continues working and shows “Calendar off/unavailable”.</span>
+                  <b>News Guard™ shield</b><br>
+                  <span>Countdown, impact labels, look-ahead window, and shaded danger zones around releases.</span>
+                  <span class="subnote">Enable in MT5: Tools → Options → Server → Enable news (Toolbox → Calendar tab to verify).</span>
                 </div>
               </li>
               <li>
                 <div class="ic">ADX</div>
                 <div>
-                  <b>Trend + strength confirmation</b><br>
-                  <span>EMA(50/200) alignment + ADX threshold + Edge% helps avoid false momentum signals.</span>
+                  <b>Edge% + EMA + ADX confirmation</b><br>
+                  <span>Disciplined alignment reduces false signals and improves trade selectivity.</span>
                 </div>
               </li>
               <li>
                 <div class="ic">🔔</div>
                 <div>
                   <b>Smart alerts</b><br>
-                  <span>Signal change alerts, Edge% cross alerts, ADX confirmation, volume spike alerts, and news timing alerts.</span>
+                  <span>Signals, thresholds, strength confirmation, spikes, and news timing alerts (push/email/sound).</span>
                 </div>
               </li>
             </ul>
@@ -722,7 +741,7 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Expert Advisors</h2>
-        <div class="hint">Three automated systems with dashboards, basket/session management, and strict limits — built for consistency, not gambling.</div>
+        <div class="hint">Three automated systems with dashboards, basket/session management, and strict limits — engineered for consistency, not gambling.</div>
       </div>
 
       <div class="grid">
@@ -734,7 +753,7 @@
           </div>
           <div class="title">
             <h3>Turbo 2030 Quantum Advanced</h3>
-            <p>Triple-engine basket trading suite with ultra-fast batch execution, session controls, and a professional on-chart command center.</p>
+            <p>Triple-engine basket trading suite: AUTO (RSI+MA), MANUAL, and Turbo Range — with ultra-fast execution and serious protection.</p>
           </div>
 
           <div class="media">
@@ -751,30 +770,32 @@
 
           <div class="body">
             <p class="lead">
-              Turbo 2030 is not “just another EA.” It is a complete trading suite engineered for speed, multi-market exploitation, and operational control.
-              It scans, executes, manages baskets, tracks drawdown, and enforces daily limits — all from a clean dashboard.
+              Turbo 2030 Quantum Advanced is engineered like a trading desk: it scans opportunities, executes at speed, manages baskets,
+              and enforces risk boundaries. The system’s “Quantum” strength is its ability to process multiple market conditions and run a multi-mode
+              workflow without sacrificing control.
             </p>
 
             <div class="paragraphs">
-              <p><strong>Three engines in one system.</strong> Switch between AUTO mode (RSI for market condition + MA for entries), MANUAL mode (you control direction/decisions),
-                and Turbo Range mode (a multi-market scalping engine based on MA signals across different pairs). This is built for traders who want options,
-                not a single rigid behavior.</p>
+              <p><strong>Triple-engine system.</strong> AUTO mode uses RSI to understand market condition and MA logic for entries, MANUAL mode gives you
+                direct control, and Turbo Range introduces a proprietary multi-market scalping engine based on MA signals across multiple pairs.
+                One suite covers scalping to basket trading without switching tools.</p>
 
-              <p><strong>Ultra-fast execution where it matters.</strong> Turbo 2030 supports batch trade opening with configurable delays, designed to reduce slippage
-                and capture entries closer to intended price in fast markets. The execution approach is engineered for speed without losing safety rails.</p>
+              <p><strong>Ultra-fast execution engine.</strong> Batch trade opening executes multiple orders simultaneously with configurable delays.
+                This is designed to reduce slippage, keep entries closer to plan, and exploit fast-moving moments without “late fills” ruining the setup.</p>
 
-              <p><strong>Risk management is the product.</strong> Persistent basket drawdown tracking, enhanced recovery cycles with controlled multipliers,
-                separate stop systems for baskets and daily trading, and profit management that can close a basket and restart (or stop for the day) depending on your settings.</p>
+              <p><strong>Enhanced risk & recovery suite.</strong> Persistent basket drawdown tracking for accountability, staged recovery mode with controlled multipliers,
+                and separate stop-loss mechanisms for individual baskets and your overall daily trading.
+                Daily targets and session locks help enforce discipline and prevent revenge trading.</p>
 
-              <p><strong>Visibility + controls.</strong> The dashboard acts as a command center: monitor basket P/L, mode state, recovery status, trade counts,
-                and key conditions without guessing what the EA is doing.</p>
+              <p><strong>Professional dashboard & scanner.</strong> A clean multi-panel GUI exposes basket P/L, trade status, mode state, recovery activity,
+                and key metrics so you always know what the EA is doing and why.</p>
             </div>
 
             <ul class="bullets">
-              <li><div class="ic">3</div><div><b>Triple-engine core</b><br><span>AUTO (RSI+MA), MANUAL controls, Turbo Range scalping engine.</span></div></li>
-              <li><div class="ic">⚡</div><div><b>Batch execution</b><br><span>Opens multiple trades with smart delays to capture fast opportunities.</span></div></li>
-              <li><div class="ic">🛡</div><div><b>Protection suite</b><br><span>Persistent drawdown tracker, staged recovery, basket & daily stop logic.</span></div></li>
-              <li><div class="ic">📊</div><div><b>Professional dashboard</b><br><span>Real-time transparency: status, P/L, mode, exposure, and session controls.</span></div></li>
+              <li><div class="ic">3</div><div><b>Triple-engine core</b><br><span>AUTO, MANUAL, and Turbo Range — switch behaviors without changing EAs.</span></div></li>
+              <li><div class="ic">⚡</div><div><b>Batch execution</b><br><span>Controlled multi-order placement designed for speed with safety.</span></div></li>
+              <li><div class="ic">🛡</div><div><b>Risk boundaries</b><br><span>Persistent drawdown tracking, staged recovery limits, basket & daily protection.</span></div></li>
+              <li><div class="ic">📊</div><div><b>Dashboard transparency</b><br><span>Mode, P/L, recovery state, and control buttons in one command center.</span></div></li>
             </ul>
           </div>
 
@@ -792,7 +813,7 @@
           </div>
           <div class="title">
             <h3>Advanced Market Sniper EA</h3>
-            <p>Precision trend entries with smart recovery, strict daily protections, and a transparent dashboard that shows every decision.</p>
+            <p>Precision trend trading with smart recovery and capital protection — built for traders who value rules and transparency.</p>
           </div>
 
           <div class="media">
@@ -806,33 +827,37 @@
 
           <div class="body">
             <p class="lead">
-              Advanced Market Sniper is a professional-grade discipline engine. It trades only when multi-timeframe direction and moving-average momentum agree —
-              then manages baskets with strict risk rules and controlled recovery logic designed to protect capital.
+              Advanced Market Sniper is a professional-grade EA for clean, high-probability entries.
+              It trades only when higher-timeframe structure and current-timeframe MA momentum agree — then manages baskets
+              and recovery with strict limits so you don’t trade emotionally.
             </p>
 
             <div class="paragraphs">
-              <p><strong>H1 structure first.</strong> The EA reads higher-timeframe swing highs/lows to determine dominant bias. This filters out noise and reduces
-                the “random entry” behavior that destroys most automated systems in ranging markets.</p>
+              <p><strong>H1 market structure bias.</strong> Uses H1 swing highs/lows to define direction and avoid the noise that destroys most systems.
+                This keeps entries aligned with dominant flow instead of random candle movement.</p>
 
-              <p><strong>MA confirmation on the running timeframe.</strong> Entries require price vs MA alignment to confirm momentum. If there is any conflict between H1 direction and MA trend,
-                the EA refuses to trade. That simple refusal rule is where win-rate and drawdown control usually improve.</p>
+              <p><strong>MA confirmation + dual-alignment rule.</strong> Entries require price vs moving-average alignment on the active timeframe.
+                If H1 bias and MA trend conflict, the EA does nothing. That “NO trade” rule is a major win-rate and drawdown stabilizer.</p>
 
-              <p><strong>Basket system with controlled exposure.</strong> Instead of a single position, the EA can manage a basket of trades with shared profit target and stop logic,
-                allowing smoother exits and controlled recovery from minor pullbacks.</p>
+              <p><strong>Basket trading (controlled exposure).</strong> Trades can be managed as baskets with shared profit target and stop logic,
+                allowing smoother exits and structured recovery from minor pullbacks.</p>
 
-              <p><strong>Smart recovery, not blind martingale.</strong> Recovery triggers only after a defined dollar loss, is capped to a maximum number of recovery baskets,
-                follows MA direction (not guesswork), and includes cooldown protection to prevent runaway behavior.</p>
+              <p><strong>Intelligent recovery (not blind martingale).</strong> Recovery triggers only after a defined dollar loss, is strictly limited in count,
+                follows MA direction (trend-aligned), and includes cooldown logic to avoid runaway behavior.</p>
 
-              <p><strong>Daily and drawdown protection.</strong> Daily profit target stop, daily stop loss, and max equity drawdown protection can close all trades and stop trading
-                when limits are hit. Capital protection is treated as a first-class feature.</p>
+              <p><strong>Capital protection suite.</strong> Daily profit target stop, daily stop loss, and maximum equity drawdown protection
+                can automatically close trades and stop trading to preserve capital.</p>
+
+              <p><strong>Professional dashboard.</strong> Displays H1 trend, MA trend, alignment status, basket stats, recovery status,
+                daily P/L vs targets, account drawdown %, and trading status (Ready/Active/Recovery/Stopped).</p>
             </div>
 
             <ul class="bullets">
-              <li><div class="ic">H1</div><div><b>Higher-timeframe bias</b><br><span>Trades with structure, not noise — trend determined by H1 swing logic.</span></div></li>
-              <li><div class="ic">MA</div><div><b>Dual-alignment rule</b><br><span>H1 trend + MA trend must agree; otherwise it stays flat.</span></div></li>
-              <li><div class="ic">♻</div><div><b>Intelligent recovery</b><br><span>Loss-triggered, capped, trend-aligned recovery with cooldowns — not reckless averaging.</span></div></li>
-              <li><div class="ic">🛡</div><div><b>Capital protection</b><br><span>Daily target stop, daily stop loss, and max drawdown safety logic.</span></div></li>
-              <li><div class="ic">📊</div><div><b>Live dashboard</b><br><span>Shows trend direction, alignment status, basket stats, recovery state, and trading status.</span></div></li>
+              <li><div class="ic">H1</div><div><b>Structure-first bias</b><br><span>Trades with the dominant direction, not random noise.</span></div></li>
+              <li><div class="ic">MA</div><div><b>Dual-alignment entries</b><br><span>No alignment = no trade. Clean rules, fewer bad entries.</span></div></li>
+              <li><div class="ic">♻</div><div><b>Smart recovery</b><br><span>Loss-triggered, capped, trend-aligned recovery with cooldowns.</span></div></li>
+              <li><div class="ic">🛡</div><div><b>Capital protection</b><br><span>Daily limits + max drawdown safeguard to preserve the account.</span></div></li>
+              <li><div class="ic">📊</div><div><b>Live transparency</b><br><span>Dashboard shows exactly what the EA is doing and why.</span></div></li>
             </ul>
           </div>
 
@@ -850,7 +875,7 @@
           </div>
           <div class="title">
             <h3>Quantum Emperor Candle Master</h3>
-            <p>3-in-1 H1 swing robot for multi-symbol basket trading (up to 5 markets) with a solid dashboard, basket TP, and daily trading limits.</p>
+            <p>3-in-1 H1 swing master for multi-symbol basket trading (up to 5 markets) with session management and a solid dashboard.</p>
           </div>
 
           <div class="media">
@@ -864,33 +889,38 @@
 
           <div class="body">
             <p class="lead">
-              Candle Master is built around one truth: on H1, price reacts to extremes and structure in repeatable ways.
-              It gives you three distinct engines for “candle reaction” trading — mean reversion, liquidity sweeps, and opening-range fades —
-              then wraps them in a session manager that controls overtrading, basket profits, and daily limits.
+              Candle Master is a 3-in-1 H1 swing trading robot built for multi-symbol basket trading.
+              It focuses on repeatable H1 candle reactions — mean-reversion at extremes, liquidity sweeps that fake out breakouts,
+              and opening-range fades — then manages the full trading session with basket profit control and daily limits.
             </p>
 
             <div class="paragraphs">
-              <p><strong>Bands Mode (Mean-Reversion).</strong> Builds a volatility band around either the H1 Open or EMA(20) on H1.
-                Price stretches to the band edge, confirms with RSI filter and a rejection candle, then enters back toward fair value.
-                This is classic swing mean-reversion with structure awareness.</p>
+              <p><strong>Mode 1 — Bands (Mean-Reversion).</strong> Builds a volatility band around either the H1 Open or EMA(20).
+                Waits for price to stretch to band edge, confirms with RSI filter and a rejection candle, then enters back toward fair value
+                (classic mean-reversion swing logic with structure awareness).</p>
 
-              <p><strong>Sweep & Return Mode (Liquidity Engineering).</strong> Detects liquidity sweeps of the previous H1 high/low,
-                then waits for a reclaim confirmation using a lower timeframe rejection candle (default M5).
-                It targets the “fake breakout → return” move that catches most retail traders.</p>
+              <p><strong>Mode 2 — Sweep & Return.</strong> Detects liquidity sweeps of the previous H1 high/low, then confirms a reclaim
+                using lower timeframe rejection (default M5). Trades the “fake breakout → return” move that traps most retail traders.</p>
 
-              <p><strong>ORB Fade Mode (Opening Range Box).</strong> Builds an opening range box for the first X minutes of the hour (default 15),
-                waits for a touch and rejection, and fades the breakout back inside the range. Designed for clean, rule-based entries with buffer control.</p>
+              <p><strong>Mode 3 — ORB Fade.</strong> Creates an Opening Range Box for the first X minutes of the hour (default 15),
+                waits for touch + rejection, then fades the breakout back inside the range. Clean entries with buffer control.</p>
 
-              <p><strong>Basket engine + session controls.</strong> Runs up to 5 symbols simultaneously, can close all trades when basket profit hits target,
-                and can stop trading when a daily target or daily max loss is reached — a true session manager, not a “fire and forget” entry bot.</p>
+              <p><strong>Basket and session manager.</strong> Runs up to 5 symbols simultaneously, closes all trades when basket profit hits your target,
+                and enforces daily target and daily max loss so the EA can stop trading and protect the account.</p>
+
+              <p><strong>Anti-overtrading protections.</strong> Trade frequency limits, optional one-side-only per symbol, minimum seconds between entries,
+                and optional break-even and trailing logic based on live profit in USD. ATR-based SL/TP can be enabled for volatility-adaptive risk.</p>
+
+              <p><strong>Persistent accountability metric.</strong> Tracks the worst basket drawdown across runtime (does not reset between baskets),
+                so performance monitoring stays honest.</p>
             </div>
 
             <ul class="bullets">
-              <li><div class="ic">①</div><div><b>Bands Mode</b><br><span>Stretch → rejection → reversion toward fair value with volatility bands and RSI filter.</span></div></li>
-              <li><div class="ic">②</div><div><b>Sweep & Return</b><br><span>Liquidity sweep detection + reclaim confirmation (M5 by default) before entry.</span></div></li>
-              <li><div class="ic">③</div><div><b>ORB Fade</b><br><span>Opening range box logic to fade breakouts back into structure with buffers.</span></div></li>
-              <li><div class="ic">🧺</div><div><b>Basket profit management</b><br><span>Closes everything at basket TP and can enforce daily target / daily max loss stops.</span></div></li>
-              <li><div class="ic">📊</div><div><b>Solid dashboard</b><br><span>Symbols, open trades split, floating P/L, spread, counts, and session stats in one view.</span></div></li>
+              <li><div class="ic">①</div><div><b>Bands Mode</b><br><span>Stretch → rejection → reversion back toward fair value.</span></div></li>
+              <li><div class="ic">②</div><div><b>Sweep & Return</b><br><span>Liquidity sweep detection + reclaim confirmation (M5 default).</span></div></li>
+              <li><div class="ic">③</div><div><b>ORB Fade</b><br><span>Opening range logic that fades breakouts back into structure.</span></div></li>
+              <li><div class="ic">🧺</div><div><b>Basket TP + daily limits</b><br><span>Closes baskets at target and stops for the day on profit/loss limits.</span></div></li>
+              <li><div class="ic">📊</div><div><b>Solid dashboard</b><br><span>Symbols, trade counts, floating P/L, basket stats, and trial status in one panel.</span></div></li>
             </ul>
           </div>
 
@@ -921,10 +951,9 @@
         </div>
 
         <p class="fine" style="margin-top:12px;">
-          <b>Links:</b>
-          Indicators checkout → <a href="https://paystack.com/buy/indicators-ufgqri" target="_blank" rel="noopener" style="text-decoration:underline;">Pay for Indicators ($30)</a>
-          &nbsp; • &nbsp;
-          Expert Advisors checkout → <a href="https://paystack.com/buy/expertadvisor-jcelvf" target="_blank" rel="noopener" style="text-decoration:underline;">Pay for Expert Advisors ($100)</a>
+          <b>Checkout links:</b><br>
+          Indicators ($30) → <a href="https://paystack.com/buy/indicators-ufgqri" target="_blank" rel="noopener" style="text-decoration:underline;">https://paystack.com/buy/indicators-ufgqri</a><br>
+          Expert Advisors ($100) → <a href="https://paystack.com/buy/expertadvisor-jcelvf" target="_blank" rel="noopener" style="text-decoration:underline;">https://paystack.com/buy/expertadvisor-jcelvf</a>
         </p>
 
         <div class="delivery" style="margin-top:14px;">
